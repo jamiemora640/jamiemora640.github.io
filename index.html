@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norton Support - Get Help 24/7</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a56db;
+            margin-left: 10px;
+        }
+        
+        .header-phone {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            color: #1a56db;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 15px;
+            border: 2px solid #1a56db;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .header-phone:hover {
+            background-color: #1a56db;
+            color: white;
+        }
+        
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #1a56db 0%, #0d47a1 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-phone {
+            display: inline-block;
+            background-color: white;
+            color: #1a56db;
+            font-size: 24px;
+            font-weight: 700;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .hero-phone:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Features section */
+        .features {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            color: #1a56db;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #1a56db;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a237e;
+            color: white;
+            padding: 40px 20px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #e3f2fd;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #bbdefb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .footer-phone {
+            display: inline-block;
+            background-color: #1a56db;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        
+        .copyright {
+            max-width: 1200px;
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #3949ab;
+            text-align: center;
+            color: #bbdefb;
+            font-size: 14px;
+        }
+        
+        /* Floating button */
+        .floating-phone {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #1a56db;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .floating-phone:hover {
+            background-color: #0d47a1;
+            transform: scale(1.1);
+        }
+        
+        .floating-phone i {
+            font-size: 24px;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(26, 86, 219, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(26, 86, 219, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(26, 86, 219, 0);
+            }
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .hero-phone {
+                font-size: 20px;
+                padding: 12px 25px;
+            }
+            
+            .header-phone {
+                font-size: 16px;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with phone number -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-text">Norton</div>
+            </div>
+            <a href="tel:1 (888) 351-8211" class="header-phone">1 (888) 351-8211</a>
+        </div>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Norton 24/7 Customer Support</h1>
+            <p>Get immediate assistance with installation, activation, and troubleshooting from our certified experts.</p>
+            <a href="tel:1 (888) 351-8211" class="hero-phone">Call Now: 1 (888) 351-8211</a>
+            <p>Available 24 hours a day, 7 days a week</p>
+        </div>
+    </section>
+
+    <!-- Features section -->
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Virus & Threat Removal</h3>
+                <p>Expert assistance to remove viruses, malware, and other threats from your devices.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚙️</div>
+                <h3>Installation & Setup</h3>
+                <p>Help with downloading, installing, and configuring your Norton security products.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>Renewal & Billing Support</h3>
+                <p>Assistance with subscription renewal, billing inquiries, and account management.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔑</div>
+                <h3>Password Manager Help</h3>
+                <p>Support for Norton Password Manager setup, synchronization, and troubleshooting.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Multi-Device Support</h3>
+                <p>Help with installing and managing Norton across all your computers, phones, and tablets.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Performance Optimization</h3>
+                <p>Guidance to optimize your device performance while maintaining maximum security.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Support Options</h3>
+                <ul>
+                    <li><a href="#">Live Chat Support</a></li>
+                    <li><a href="tel:1 (888) 351-8211">Phone Support</a></li>
+                    <li><a href="#">Community Forums</a></li>
+                    <li><a href="#">Knowledge Base</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="#">Norton 360</a></li>
+                    <li><a href="#">Norton Antivirus</a></li>
+                    <li><a href="#">Norton VPN</a></li>
+                    <li><a href="#">Norton Family</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Need immediate assistance?</p>
+                <a href="tel:1 (888) 351-8211" class="footer-phone">1 (888) 351-8211</a>
+                <p style="margin-top: 15px;">Available 24/7</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Norton by Gen Digital Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating phone button -->
+    <a href="tel:1 (888) 351-8211" class="floating-phone">
+        <i>📞</i>
+    </a>
+
+    <script>
+        // Simple script to track phone clicks (for analytics)
+        document.addEventListener('DOMContentLoaded', function() {
+            const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+            
+            phoneLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    // In a real implementation, you would send this to your analytics
+                    console.log('Phone number clicked: ' + this.href);
+                    // Example: gtag('event', 'click', {'event_category': 'Phone', 'event_label': this.href});
+                });
+            });
+        });
+    </script>
+</body>
+</html>
